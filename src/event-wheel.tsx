@@ -3,6 +3,11 @@ import { useState, useEffect, useRef } from "react";
 /* ------------------------------------------------------------
     MAIN SLOT MACHINE COMPONENT
 ------------------------------------------------------------- */
+// Page-only Google Font import
+const quicksandFont = `
+  @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+`;
+
 const SlotMachine = () => {
   const fileNames = [
     "reward-1-Clash_King.png",
@@ -216,9 +221,11 @@ const SlotMachine = () => {
       MAIN RENDER
   ------------------------------------------------------------- */
   return (
-<section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#F2E4D6]">
+<section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#F2E4D6]"
+style={{ fontFamily: "'Quicksand', sans-serif" }}>
 
       <style>{`
+       ${quicksandFont}
         @keyframes spinReel {
           0% { transform: translateY(0); }
           100% { transform: translateY(-2000px); }
@@ -355,7 +362,7 @@ const SlotMachine = () => {
 ------------------------------------------------------------- */
 const PullIndicator = () => (
   <div className="flex flex-col items-center gap-2 mt-6 select-none pointer-events-none">
-    <div className="text-[#fb4242] font-extrabold text-3xl tracking-wide animate-pulse drop-shadow-xl">
+    <div className="text-[#fb4242] font-bold text-3xl tracking-wide animate-pulse drop-shadow-xl">
       PULL
     </div>
 
